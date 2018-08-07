@@ -1,0 +1,6 @@
+
+dependencies {
+  api project(":team2-api")
+
+  implementation("org.sample:team1-api:1.0-SNAPSHOT")
+}

@@ -1,0 +1,11 @@
+apply plugin: 'java-library'
+apply plugin: 'idea'
+
+
+dependencies { }
+
+allprojects {
+    apply plugin: 'java-library'
+    version "1.0-SNAPSHOT"
+    group "org.sample"
+}

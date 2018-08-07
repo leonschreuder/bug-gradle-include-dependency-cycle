@@ -1,0 +1,4 @@
+rootProject.name='team2'
+
+include 'team2-api'
+include 'team2-bl'
