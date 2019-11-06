@@ -2,7 +2,10 @@ apply plugin: 'java-library'
 apply plugin: 'idea'
 
 
-dependencies { }
+dependencies {
+  implementation("org.sample:team1-bl")   // Causes 'dependency cycle' failure
+  implementation("org.sample:team2-bl")   // Causes 'dependency cycle' failure
+}
 
 allprojects {
     apply plugin: 'java-library'
