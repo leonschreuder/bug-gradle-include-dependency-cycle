@@ -1,19 +1,14 @@
 rootProject.name='team2'
 
-
-// gradle.ext.projectsBaseDir = settingsDir.canonicalPath
-// file(gradle.projectsBaseDir).eachDir { currentDir ->
-//     if (file(currentDir.path + java.io.File.separator + "build.gradle").exists()) {
-//       if (gradle.parent != null && !currentDir.name.contains("-api")) {
-//         include currentDir.name
-//         logger.quiet("including sub-module ${currentDir.name} (${currentDir})")
-//       } else {
-//         includeBuild(currentDir)
-//         logger.quiet("Skipping sub-module in ${currentDir.name} include-build")
-//       }
-//     }
-// }
-
-// include 'team2-api'
-includeBuild('./team2-api')
-include 'team2-bl'
+gradle.ext.projectsBaseDir = settingsDir.canonicalPath
+file(gradle.projectsBaseDir).eachDir { currentDir ->
+    if (file(currentDir.path + java.io.File.separator + "build.gradle").exists()) {
+      if (!currentDir.name.contains("-api")) {
+        logger.info("[ESO] Including sub-module ${currentDir.name} (${currentDir})")
+        include currentDir.name
+      } else {
+        logger.info("[ESO] Including nested project in ${currentDir.name}")
+        includeBuild(currentDir)
+      }
+    }
+}

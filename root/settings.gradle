@@ -3,5 +3,4 @@ rootProject.name='root'
 include 'root-bl'
 
 includeBuild('../team1')
-includeBuild('../team2/team2-api')
 includeBuild('../team2')

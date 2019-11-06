@@ -1,6 +1,6 @@
 
 dependencies {
-  api("org.sample:team2-api:1.0-SNAPSHOT")
+  compile("org.sample:team2-api:1.0-SNAPSHOT")
 
   implementation("org.sample:team1-api:1.0-SNAPSHOT")
 }
